@@ -1,0 +1,9 @@
+{
+  "name": "cosy_voice",
+  "build": {
+    "dockerfile": "Dockerfile",
+  },
+  "customizations": {
+    "jetbrains" : {"backend": "PyCharm"},
+  }
+}
