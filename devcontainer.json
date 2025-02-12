@@ -6,7 +6,7 @@
   },
   "workspaceFolder": "/opt/workspace",
   "onCreateCommand": {
-    "update": "apt update && apt -y upgrade",
+    "update": "apt update",
     "installSystemDependencies": "apt install -y git && apt -y install git unzip git-lfs build-essential && git lfs install",
   },
   "customizations": {
