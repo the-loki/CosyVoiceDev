@@ -1,14 +1,14 @@
 {
   "name": "cosy_voice",
-  "image": "nvcr.io/nvidia/cuda:12.1.0-cudnn8-runtime-ubuntu22.04",
+  "image": "cosy_voice_dev:latest",
   "containerEnv": {
     "DEBIAN_FRONTEND": "noninteractive"
   },
+  "runArgs": [
+    "--gpus=all"
+  ],
   "workspaceFolder": "/opt/workspace",
-  "onCreateCommand": {
-    "update": "apt update",
-    "installSystemDependencies": "apt install -y git && apt -y install git unzip git-lfs build-essential && git lfs install",
-  },
+  "onCreateCommand": {},
   "customizations": {
     "jetbrains": {
       "backend": "PyCharm"
