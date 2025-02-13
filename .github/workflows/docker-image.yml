@@ -26,4 +26,7 @@ jobs:
     - name: 'Build Image'
       run: |
         docker build . -f ./DockerfileDev --tag ghcr.io/the-loki/cosy-voice-dev:latest
-        docker push ghcr.io/the-loki/cosy-voice-dev:latest
+        docker save -o cosy-voice-dev.tar ghcr.io/the-loki/cosy-voice-dev:latest
+    - uses: actions/upload-artifact@v4
+      with:
+        path: ./cosy-voice-dev.tar
