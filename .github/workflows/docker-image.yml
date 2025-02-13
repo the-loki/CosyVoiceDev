@@ -25,5 +25,5 @@ jobs:
 
     - name: 'Build Image'
       run: |
-        docker build . --tag ghcr.io/the-loki/cosy-voice-dev:latest
+        docker build . -f ./DockerfileDev --tag ghcr.io/the-loki/cosy-voice-dev:latest
         docker push ghcr.io/the-loki/cosy-voice-dev:latest
