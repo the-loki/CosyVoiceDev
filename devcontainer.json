@@ -1,6 +1,6 @@
 {
   "name": "cosy_voice",
-  "image": "cosy_voice_dev:latest",
+  "image": "gitea.theloki.space:30443/loki/cosy-voice-dev:latest",
   "containerEnv": {
     "DEBIAN_FRONTEND": "noninteractive"
   },
@@ -8,7 +8,9 @@
     "--gpus=all"
   ],
   "workspaceFolder": "/opt/workspace",
-  "onCreateCommand": {},
+  "onCreateCommand": {
+    "shell": "ls -al",
+  },
   "customizations": {
     "jetbrains": {
       "backend": "PyCharm"

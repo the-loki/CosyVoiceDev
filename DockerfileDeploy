@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+LABEL authors="root"
+
+RUN sed -i 's/snapshot_download(model_dir)/snapshot_download(model_id=model_dir, local_files_only=True)/g' file.py
+
+ENTRYPOINT ["top", "-b"]
