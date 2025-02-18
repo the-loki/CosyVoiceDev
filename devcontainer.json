@@ -1,6 +1,6 @@
 {
   "name": "cosy_voice",
-  "image": "gitea.theloki.space:30443/loki/cosy-voice-dev:latest",
+  "image": "ghcr.io/the-loki/cosy-voice-dev:latest",
   "containerEnv": {
     "DEBIAN_FRONTEND": "noninteractive"
   },

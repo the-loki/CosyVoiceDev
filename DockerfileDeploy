@@ -1,6 +1,11 @@
-FROM ubuntu:latest
-LABEL authors="root"
+FROM ghcr.io/the-loki/cosy-voice-dev:latest
 
-RUN sed -i 's/snapshot_download(model_dir)/snapshot_download(model_id=model_dir, local_files_only=True)/g' file.py
+WORKDIR /opt/workspace
+RUN git clone --recursive https://github.com/the-loki/CosyVoiceDev.git
 
-ENTRYPOINT ["top", "-b"]
+RUN sed -i 's/snapshot_download(model_dir)/snapshot_download(model_id=model_dir, local_files_only=True)/g' CosyVoiceDev/CosyVoice/cosyvoice/cli/cosyvoice.py
+RUN python3 CosyVoiceDev/download_model.py
+
+EXPOSE 50000
+
+ENTRYPOINT ["python3", "CosyVoiceDev/Cosyvoice/runtime/python/fastapi/server.py", "--port", "50000", "--mode", "iic/CosyVoice2-0.5B"]
