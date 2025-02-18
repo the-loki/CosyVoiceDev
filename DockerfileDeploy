@@ -8,4 +8,4 @@ RUN python3 CosyVoiceDev/download_model.py
 
 EXPOSE 50000
 
-ENTRYPOINT ["python3", "CosyVoiceDev/Cosyvoice/runtime/python/fastapi/server.py", "--port", "50000", "--mode", "iic/CosyVoice2-0.5B"]
+ENTRYPOINT ["python3", "CosyVoiceDev/CosyVoice/runtime/python/fastapi/server.py", "--port", "50000", "--mode", "iic/CosyVoice2-0.5B"]
